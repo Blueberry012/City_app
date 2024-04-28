@@ -5,7 +5,7 @@ from streamlit_folium import st_folium
 
 
 # Charger les données à partir du fichier CSV
-df = pd.read_excel('data\data_ville.xlsx')
+df = pd.read_excel('data/data_ville.xlsx')
 df.dropna(subset=['Latitude'], inplace=True)
 df.dropna(subset=['Longitude'], inplace=True)
 df = df[df['Population'] >= 20000]
