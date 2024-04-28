@@ -7,7 +7,7 @@ import json
 
 
 # Charger les données à partir du fichier CSV
-df1 = pd.read_excel('data\data_departement.xlsx')
+df1 = pd.read_excel('data/data_departement.xlsx')
 df1[['Latitude', 'Longitude']] = df1['Geo Point'].str.split(', ', expand=True)
 df1.dropna(subset=['Latitude'], inplace=True)
 df1.dropna(subset=['Longitude'], inplace=True)
