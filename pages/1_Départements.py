@@ -13,7 +13,7 @@ df1.dropna(subset=['Latitude'], inplace=True)
 df1.dropna(subset=['Longitude'], inplace=True)
 df1 = df1[df1['Population'] >= 20000]
 
-df_meteo = pd.read_excel('data\meteo.xlsx')
+df_meteo = pd.read_excel('data/meteo.xlsx')
 for col in df_meteo.columns:
     df_meteo = df_meteo[df_meteo[col] != 0]
 
