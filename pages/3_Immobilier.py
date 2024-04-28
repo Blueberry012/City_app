@@ -10,7 +10,7 @@ from io import StringIO
 import os
 
 
-df = pd.read_excel('data\data_immobilier.xlsx')
+df = pd.read_excel('data/data_immobilier.xlsx')
 df.dropna(subset=['Latitude'], inplace=True)
 df.dropna(subset=['Longitude'], inplace=True)
 df = df[df['Population'] >= 20000]
@@ -82,7 +82,7 @@ def main():
             else:
                 code=ville1[-6:-4]
                 vil=ville1[-6:-1]
-                csv_filename = f'data\immobilier\dvf_departement_{code}.csv'
+                csv_filename = f'data/immobilier/dvf_departement_{code}.csv'
 
                 if os.path.exists(csv_filename):
                     print('existe deja')
@@ -98,7 +98,7 @@ def main():
                             # Création d'un DataFrame à partir des données téléchargées
                             data = pd.read_csv(StringIO(response.content.decode('utf-8')))
                             # Sauvegarde du DataFrame en CSV
-                            csv_filename = f'data\immobilier\dvf_departement_{code}.csv'
+                            csv_filename = f'data/immobilier/dvf_departement_{code}.csv'
                             data.to_csv(csv_filename, index=False)
                             print(f"Téléchargé et sauvegardé : {csv_filename}")
                         except pd.errors.EmptyDataError:
@@ -226,7 +226,7 @@ def main():
             else:
                 code=ville2[-6:-4]
                 vil=ville2[-6:-1]
-                csv_filename = f'data\immobilier\dvf_departement_{code}.csv'
+                csv_filename = f'data/immobilier/dvf_departement_{code}.csv'
 
                 if os.path.exists(csv_filename):
                     print('existe deja')
@@ -242,7 +242,7 @@ def main():
                             # Création d'un DataFrame à partir des données téléchargées
                             data = pd.read_csv(StringIO(response.content.decode('utf-8')))
                             # Sauvegarde du DataFrame en CSV
-                            csv_filename = f'data\immobilier\dvf_departement_{code}.csv'
+                            csv_filename = f'data/immobilier/dvf_departement_{code}.csv'
                             data.to_csv(csv_filename, index=False)
                             print(f"Téléchargé et sauvegardé : {csv_filename}")
                         except pd.errors.EmptyDataError:
@@ -369,7 +369,7 @@ def main():
         else:
             code=ville[-6:-4]
             vil=ville[-6:-1]
-            csv_filename = f'data\immobilier\dvf_departement_{code}.csv'
+            csv_filename = f'data/immobilier/dvf_departement_{code}.csv'
 
             if os.path.exists(csv_filename):
                 print('existe deja')
@@ -385,7 +385,7 @@ def main():
                         # Création d'un DataFrame à partir des données téléchargées
                         data = pd.read_csv(StringIO(response.content.decode('utf-8')))
                         # Sauvegarde du DataFrame en CSV
-                        csv_filename = f'data\immobilier\dvf_departement_{code}.csv'
+                        csv_filename = f'data/immobilier/dvf_departement_{code}.csv'
                         data.to_csv(csv_filename, index=False)
                         print(f"Téléchargé et sauvegardé : {csv_filename}")
                     except pd.errors.EmptyDataError:
