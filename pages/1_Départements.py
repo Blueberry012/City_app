@@ -18,7 +18,7 @@ for col in df_meteo.columns:
     df_meteo = df_meteo[df_meteo[col] != 0]
 
 df = pd.merge(df1, df_meteo, left_on='Code', right_on='department (code)', how='left')
-data_geo = json.load(open('data\departements.geojson', encoding='utf-8'))
+data_geo = json.load(open('data/departements.geojson', encoding='utf-8'))
 
 
 st.set_page_config(layout="wide")
